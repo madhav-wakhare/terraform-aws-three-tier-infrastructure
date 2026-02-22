@@ -1,0 +1,30 @@
+# Local .terraform directories (provider cache — do NOT commit)
+**/.terraform/
+
+# State files — managed in S3, never commit locally
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Terraform plan output files — may contain sensitive values
+*.tfplan
+
+# Override files (local developer overrides — not for shared use)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Transient lock info file (S3 native locking used instead)
+.terraform.tfstate.lock.info
+
+# -------------------------------------------------------
+# DO NOT ignore:
+#   terraform.tfvars   — safe to commit (no secrets; credentials are in AWS Secrets Manager)
+#   .terraform.lock.hcl — MUST be committed to pin provider versions across the team
+# -------------------------------------------------------
+!**/.terraform.lock.hcl
+!**/terraform.tfvars
